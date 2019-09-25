@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar component Matches the snapshot 1`] = `
+<div>
+  <form
+    id="search_bar"
+  >
+    <div
+      className="search"
+    >
+      <input
+        className="round"
+        id="username_search_bar"
+        type="text"
+      />
+    </div>
+  </form>
+</div>
+`;
