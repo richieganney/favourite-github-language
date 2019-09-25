@@ -8,7 +8,8 @@ class SearchBar extends Component {
         super(props);
         this.state =
         {
-        username: ""
+        username: "",
+        languages: []
         };
         this.onChange = this.onChange.bind(this);
     }
@@ -18,12 +19,18 @@ class SearchBar extends Component {
       console.log(this.state.username)
     }
 
+    getRepoLanguages(response){
+        return response.data.map(function(repoObject){
+            return repoObject.language
+        })
+    }
+
     onSubmit(e) {
         e.preventDefault();
         axios
           .get(`https://api.github.com/users/${this.state.username}/repos`)
           .then(response => {
-            this.setState({ languages: response })
+            this.setState({ languages: this.getRepoLanguages(response) })
             console.log(this.state.languages)
           })
           .catch(error => {
