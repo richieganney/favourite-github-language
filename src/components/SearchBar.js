@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../styles.css'
 
 class SearchBar extends Component {
@@ -16,6 +17,19 @@ class SearchBar extends Component {
       this.setState({ username: e.target.value });
       console.log(this.state.username)
     }
+
+    onSubmit(e) {
+        e.preventDefault();
+        axios
+          .get(`https://api.github.com/users/${this.state.username}/repos`)
+          .then(response => {
+            this.setState({ languages: response })
+            console.log(this.state.languages)
+          })
+          .catch(error => {
+            console.log(error.response);
+          });
+      }
 
     render() {
         return (
