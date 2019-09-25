@@ -8,12 +8,15 @@ describe("SearchBar component", () => {
     expect(searchBar.toJSON()).toMatchSnapshot();
   });
 
-  test("it shows the expected text when submitted", () => {
-    const component = create(<SearchBar value="richieganney" />);
-    const instance = component.getInstance();
-    expect(instance.state.username).toBe("");
-    instance.onSubmit();
-    expect(instance.state.username).toBe("richieganney");
-  });
+test('request to github api', async () => {
+  const Octokit = require('@octokit/rest')
+  const nock = require('nock')
+  const octokit = new Octokit()
+  const scope = nock('https://api.github.com')
+    .get('/')
+    .reply(200, {})
 
+  await octokit.request('/')
+  scope.done()
+})
 });

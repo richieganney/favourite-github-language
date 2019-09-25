@@ -12,7 +12,9 @@ exports[`Main component Matches the snapshot 1`] = `
         <input
           className="round"
           id="username_search_bar"
+          onChange={[Function]}
           type="text"
+          value=""
         />
       </div>
     </form>
