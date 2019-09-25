@@ -19,7 +19,7 @@ class FavouriteLanguage extends Component {
         if(this.props.languages.length !== 0){
         return (
             <div id="favouriteLanguage">
-                 <h1>{this.props.username}'s favourite language is: {this.favourite(this.props.languages)}</h1>
+                 <p style={pStyle}>{this.props.username}'s favourite language is: <span style={spanStyle}>{this.favourite(this.props.languages)}</span></p>
             </div>
         );
     } else {
@@ -32,5 +32,19 @@ FavouriteLanguage.propTypes = {
     languages: PropTypes.array,
     username: PropTypes.string
 }
+
+const pStyle = {
+    font: '20px montserrat-bold, sans-serif',
+    color: '#14153F',
+    marginBlockStart: '0.67em',
+    marginBlockEnd: '0.67em',
+    marginInlineStart: '0px',
+    marginInlineEnd: '0px',
+    fontWeight: 'bold',
+}
+
+const spanStyle = {
+    color: '#FF00A4'
+  }
 
 export default FavouriteLanguage;

@@ -43,16 +43,15 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <form id="search_bar" onSubmit={e => {this.onSubmit(e)}}>
-                    <div className="search">
-                        <input placeholder="Enter a github username" type="text" id="username_search_bar" className="round" value={this.state.username} onChange={this.onChange} />
-                    </div>
-                    <div>
-                        <FavouriteLanguage
-                         languages={this.state.languages}
-                         username={this.state.username} />
-                    </div>
+                <form className="container" onSubmit={e => {this.onSubmit(e)}}>
+                <input type="text" id="username_search_bar" value={this.state.username} onChange={this.onChange}></input>
+                <div className="search"></div>
                 </form>
+                <div>
+                <FavouriteLanguage
+                    languages={this.state.languages}
+                    username={this.state.username} />
+                </div>
             </div>
         );
     }
