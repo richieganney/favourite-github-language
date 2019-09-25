@@ -20,3 +20,20 @@
 .App-link {
   color: #09d3ac;
 }
+
+.round {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px #000 solid;
+  padding: 5px 5px 5px 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.search {
+  position: relative;
+  width: 190px;
+  height: 30px;
+}
