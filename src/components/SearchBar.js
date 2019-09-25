@@ -28,8 +28,9 @@ class SearchBar extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        let gitHubAPI = `https://api.github.com/users/`
         axios
-          .get(`https://api.github.com/users/${this.state.username}/repos`)
+          .get(gitHubAPI + `${this.state.username}/repos`)
           .then(response => {
             this.setState({ languages: this.getRepoLanguages(response) })
             console.log(this.state.languages)

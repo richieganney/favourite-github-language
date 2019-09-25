@@ -18,6 +18,7 @@ exports[`SearchBar component Matches the snapshot 1`] = `
         value=""
       />
     </div>
+    <div />
   </form>
 </div>
 `;
