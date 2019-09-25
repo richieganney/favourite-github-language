@@ -48,7 +48,8 @@ class SearchBar extends Component {
                     </div>
                     <div>
                         <FavouriteLanguage
-                         languages={this.state.languages} />
+                         languages={this.state.languages}
+                         username={this.state.username} />
                     </div>
                 </form>
             </div>
