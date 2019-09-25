@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles.css'
+import FavouriteLanguage from './FavouriteLanguage';
 
 class SearchBar extends Component {
 
@@ -44,6 +45,10 @@ class SearchBar extends Component {
                 <form id="search_bar" onSubmit={e => {this.onSubmit(e)}}>
                     <div className="search">
                         <input placeholder="Enter a github username" type="text" id="username_search_bar" className="round" value={this.state.username} onChange={this.onChange} />
+                    </div>
+                    <div>
+                        <FavouriteLanguage
+                         languages={this.state.languages} />
                     </div>
                 </form>
             </div>
