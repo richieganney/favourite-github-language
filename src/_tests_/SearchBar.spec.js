@@ -8,15 +8,15 @@ describe("SearchBar component", () => {
     expect(searchBar.toJSON()).toMatchSnapshot();
   });
 
-test('request to github api', async () => {
-  const Octokit = require('@octokit/rest')
-  const nock = require('nock')
-  const octokit = new Octokit()
-  const scope = nock('https://api.github.com')
-    .get('/')
-    .reply(200, {})
+// test('request to github api', async () => {
+//   const Octokit = require('@octokit/rest')
+//   const nock = require('nock')
+//   const octokit = new Octokit()
+//   const scope = nock('https://api.github.com')
+//     .get('/')
+//     .reply(200, {})
 
-  await octokit.request('/')
-  scope.done()
-})
+//   await octokit.request('/')
+//   scope.done()
+// })
 });

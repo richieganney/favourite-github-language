@@ -5,6 +5,7 @@ exports[`Main component Matches the snapshot 1`] = `
   <div>
     <form
       id="search_bar"
+      onSubmit={[Function]}
     >
       <div
         className="search"
@@ -13,6 +14,7 @@ exports[`Main component Matches the snapshot 1`] = `
           className="round"
           id="username_search_bar"
           onChange={[Function]}
+          placeholder="Enter a github username"
           type="text"
           value=""
         />
