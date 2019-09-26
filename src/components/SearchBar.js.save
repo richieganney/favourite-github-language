@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+erimport React, { Component } from 'react';
 import axios from 'axios';
 import '../styles.css'
 import FavouriteLanguage from './FavouriteLanguage';
@@ -15,6 +15,7 @@ class SearchBar extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.getRepoLanguages = this.getRepoLanguages.bind(this);
+        this.clear = this.clear.bind(this);
     }
 
     onChange(e){
@@ -34,19 +35,24 @@ class SearchBar extends Component {
         axios
           .get(gitHubAPI + `${this.state.username}/repos`)
           .then(response => {
-            this.setState({ username: "", languages: this.getRepoLanguages(response) })
+            this.setState({ languages: this.getRepoLanguages(response) })
             console.log(this.state.languages)
+            this.reset();
           })
           .catch(error => {
             console.log(error.response);
           });
       }
 
+    clear() {
+      return document.getElementById("username_search_bar").reset();
+    }
+
     render() {
         return (
             <div>
                 <form id="form" className="container" onSubmit={e => {this.onSubmit(e)}}>
-                <input type="text" id="username_search_bar" value={this.state.username} onChange={this.onChange}></input>
+                <input onClick={this.clear} type="text" id="username_search_bar" value={this.state.username} onChange={this.onChange}></input>
                 <div className="search"></div>
                 </form>
                 <div>
