@@ -5,4 +5,12 @@ describe("search bar", () => {
         "richieganney"
         )
     });
+
+    it("clears the search bar once the user has pressed enter", () => {
+        cy.visit("localhost:3000");
+        cy.get("#username_search_bar").type(
+        "richieganney"
+        ).type('{enter}')
+        cy.get("#username_search_bar").should("not.have.value", "richieganney")
+    })
 });
