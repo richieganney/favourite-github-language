@@ -19,7 +19,7 @@ class FavouriteLanguage extends Component {
         if(this.props.languages.length !== 0){
         return (
             <div id="favouriteLanguage">
-                 <p style={pStyle}>{this.props.username}'s favourite language is: <span style={spanStyle}>{this.favourite(this.props.languages)}</span></p>
+                 <p style={pStyle}>If I could hazard a guess, their favourite language would be <span style={spanStyle}>{this.favourite(this.props.languages)}</span></p>
             </div>
         );
     } else {
