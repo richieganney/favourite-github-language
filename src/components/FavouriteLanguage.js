@@ -17,7 +17,6 @@ class FavouriteLanguage extends Component {
 
     render() {
         let message = this.props.languages
-        console.log(message[0])
         if(message[0] != null && message.length !== 0 && message[0] !== "That username is invalid, please try again"){
           return (
             <div id="favouriteLanguage1">
@@ -45,15 +44,19 @@ FavouriteLanguage.propTypes = {
 const pStyle = {
     fontFamily: 'montserrat',
     color: '#14153F',
-    marginBlockStart: '0.67em',
-    marginBlockEnd: '0.67em',
-    marginInlineStart: '0px',
-    marginInlineEnd: '0px',
     fontWeight: 'normal',
+    textAlign: 'center'
 }
 
 const spanStyle = {
     color: '#FF00A4'
+  }
+
+  export const favourite = (item) => {
+    return item.sort((a,b) =>
+    item.filter(v => v===a).length
+    - item.filter(v => v===b).length
+    ).pop();
   }
 
 export default FavouriteLanguage;

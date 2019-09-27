@@ -19,7 +19,6 @@ class SearchBar extends Component {
 
     onChange(e){
       this.setState({ username: e.target.value });
-      console.log(this.state.username)
     }
 
     getRepoLanguages(response){
@@ -27,15 +26,13 @@ class SearchBar extends Component {
             return repoObject.language
         })
     }
-
+    
     onSubmit(e) {
         e.preventDefault();
-        let gitHubAPI = `https://api.github.com/users/`
         axios
-          .get(gitHubAPI + `${this.state.username}/repos`)
+          .get(process.env.REACT_APP_API_KEY + `${this.state.username}/repos`)
           .then(response => {
             this.setState({ username: "", languages: this.getRepoLanguages(response) })
-            console.log(this.state.languages)
           })
           .catch(error => {
             this.setState({username: "", languages: ["That username is invalid, please try again"]})
@@ -58,6 +55,12 @@ class SearchBar extends Component {
             </div>
         );
     }
+}
+
+export const getRepoLanguages = (response) => {
+    return response.data.map(function(repoObject){
+        return repoObject.language
+    })
 }
 
 export default SearchBar;

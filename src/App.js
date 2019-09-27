@@ -3,7 +3,7 @@ import SearchBar from './components/SearchBar'
 
 function App() {
   return (
-    <div className="App" id="userInstructions">
+    <div id="userInstructions">
       <h1 style={h1Style}>Enter a Github <span style={spanStyle}>username</span> to find their</h1>
       <h1 style={h1Style}>favourite language</h1>
       <SearchBar />
