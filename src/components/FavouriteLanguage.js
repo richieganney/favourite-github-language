@@ -16,16 +16,22 @@ class FavouriteLanguage extends Component {
     }
 
     render() {
-        if(this.props.languages.length !== 0){
-        return (
-            <div id="favouriteLanguage">
-                 <p style={pStyle}>If I could hazard a guess, their favourite language would be <span style={spanStyle}>{this.favourite(this.props.languages)}</span></p>
+        let message = this.props.languages
+        console.log(message[0])
+        if(message[0] != null && message.length !== 0 && message[0] !== "That username is invalid, please try again"){
+          return (
+            <div id="favouriteLanguage1">
+              <p style={pStyle}>If I could hazard a guess, their favourite language would be <span style={spanStyle}>{this.favourite(message)}</span></p>
             </div>
-        );
-    } else {
-        return null
+          )
+        } else if(message[0] == null || message[0] === "That username is invalid, please try again"){
+          return (
+            <div id="favouriteLanguage2"><p style={pStyle}>{message[0]}</p></div>
+          )
+        } else {
+          return null
+        }
     }
-}
 }
 
 FavouriteLanguage.propTypes = {

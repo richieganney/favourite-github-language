@@ -38,6 +38,7 @@ class SearchBar extends Component {
             console.log(this.state.languages)
           })
           .catch(error => {
+            this.setState({username: "", languages: ["That username is invalid, please try again"]})
             console.log(error.response);
           });
     }
@@ -46,7 +47,7 @@ class SearchBar extends Component {
         return (
             <div>
                 <form id="form" className="container" onSubmit={e => {this.onSubmit(e)}}>
-                <input type="text" id="username_search_bar" value={this.state.username} onChange={this.onChange}></input>
+                <input type="text" id="usernameSearchBar" value={this.state.username} onChange={this.onChange}></input>
                 <div className="search"></div>
                 </form>
                 <div>

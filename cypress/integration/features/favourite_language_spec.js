@@ -1,17 +1,17 @@
 describe("favourite language", () => {
-    it("shows user a message when they presses enter", () => {
+    it("shows user an appropriate message when they enter a VALID username", () => {
         cy.visit("localhost:3000");
-        cy.get("#username_search_bar").type(
+        cy.get("#usernameSearchBar").type(
         "richieganney"
         ).type('{enter}')
-        cy.get("#favouriteLanguage").should("contain", "If I could hazard a guess, their favourite language would be")
+        cy.get("#favouriteLanguage1").should("contain", "If I could hazard a guess, their favourite language would be")
     });
 
-    it("shows nothing when the username is invalid", () => {
+    it("shows user an appropriate message when they enter an INVALID username", () => {
         cy.visit("localhost:3000");
-        cy.get("#username_search_bar").type(
-        "vygrhrbfkjvbjkfnvjarbgjkrvjkkjar"
+        cy.get("#usernameSearchBar").type(
+        "testtesttesttesttesttesttesttesttesttesttest"
         ).type('{enter}')
-        cy.get("#favouriteLanguage").should("not.have.value", "favourite language is:")
+        cy.get("#favouriteLanguage2").should("contain", "That username is invalid, please try again")
     });
 });
