@@ -21,12 +21,16 @@ class FavouriteLanguage extends Component {
         if(message[0] != null && message.length !== 0 && message[0] !== "That username is invalid, please try again"){
           return (
             <div id="favouriteLanguage1">
+              <br></br><br></br>
               <p style={pStyle}>If I could hazard a guess, their favourite language would be <span style={spanStyle}>{this.favourite(message)}</span></p>
             </div>
           )
         } else if(message[0] == null || message[0] === "That username is invalid, please try again"){
           return (
-            <div id="favouriteLanguage2"><p style={pStyle}>{message[0]}</p></div>
+            <div id="favouriteLanguage2">
+                <br></br><br></br>
+                <p style={pStyle}>{message[0]}</p>
+            </div>
           )
         } else {
           return null
@@ -35,18 +39,17 @@ class FavouriteLanguage extends Component {
 }
 
 FavouriteLanguage.propTypes = {
-    languages: PropTypes.array,
-    username: PropTypes.string
+    languages: PropTypes.array
 }
 
 const pStyle = {
-    font: '20px montserrat-bold, sans-serif',
+    fontFamily: 'montserrat',
     color: '#14153F',
     marginBlockStart: '0.67em',
     marginBlockEnd: '0.67em',
     marginInlineStart: '0px',
     marginInlineEnd: '0px',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
 }
 
 const spanStyle = {

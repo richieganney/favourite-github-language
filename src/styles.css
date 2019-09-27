@@ -21,7 +21,7 @@
   color: #09d3ac;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -95,7 +95,7 @@ body {
   transition: all 0.5s;
 }
 .container input {
-  font-family: "montserrat-bold, sans-serif";
+  font-family: "montserrat";
   position: absolute;
   margin: auto;
   top: 0;
@@ -113,7 +113,7 @@ body {
   transition: all 1s;
   opacity: 0;
   z-index: 5;
-  font-weight: bolder;
+  font-weight: lighter;
   letter-spacing: 0.1em;
 }
 .container input:hover {
