@@ -6,7 +6,7 @@ describe("search bar", () => {
         )
     });
 
-    it("clears the search bar once the user entered a VALID username", () => {
+    it("clears the search bar once the user has entered a VALID username", () => {
         cy.visit("localhost:3000");
         cy.get("#usernameSearchBar").type(
         "richieganney"
@@ -14,7 +14,7 @@ describe("search bar", () => {
         cy.get("#usernameSearchBar").should("not.have.value", "richieganney")
     })
 
-    it("clears the search bar once the user entered an INVALID username", () => {
+    it("clears the search bar once the user has entered an INVALID username", () => {
         cy.visit("localhost:3000");
         cy.get("#usernameSearchBar").type(
         "testtesttesttesttesttesttesttesttesttesttest"

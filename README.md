@@ -20,15 +20,21 @@ npm start
 
 ## Running tests locally
 
+### Cypress for feature tests
 ```
 cd favourite-github-language
 npx cypress open
 ```
 That last command will open up a browser. Open the 'features' folder in that browser and click on any of the files to run the tests.
 
+### Jest for unit tests
+```
+cd favourite-github-language
+npm test
+```
 ## Tech Stack
 
-React, JavaScript, Cypress, JSX, CSS
+React, JavaScript, Cypress, Jest, JSX, CSS
 
 ## Contribution
 
