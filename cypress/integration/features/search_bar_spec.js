@@ -6,11 +6,19 @@ describe("search bar", () => {
         )
     });
 
-    it("clears the search bar once the user has pressed enter", () => {
+    it("clears the search bar once the user entered a VALID username", () => {
         cy.visit("localhost:3000");
         cy.get("#username_search_bar").type(
         "richieganney"
         ).type('{enter}')
         cy.get("#username_search_bar").should("not.have.value", "richieganney")
+    })
+
+    it("clears the search bar once the user entered an INVALID username", () => {
+        cy.visit("localhost:3000");
+        cy.get("#username_search_bar").type(
+        "testtesttesttesttesttesttesttesttesttesttest"
+        ).type('{enter}')
+        cy.get("#username_search_bar").should("not.have.value", "testtesttesttesttesttesttesttesttesttesttest")
     })
 });
