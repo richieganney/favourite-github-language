@@ -1,6 +1,6 @@
 # Favourite Github Language
 
-This is a web app built for the purposes of guessing what a github users favaourite language might be.
+This is a web app built for the purposes of guessing what a github users favourite language might be.
 
 ## To use:
 
