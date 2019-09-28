@@ -1,7 +1,7 @@
 describe("homepage", () => {
     it("gives the user instructions when they visit the webpage", () => {
         cy.visit("localhost:3000");
-        cy.get("#userInstructions").should("contain", "Enter a Github username to find their favourite language")
+        cy.get("#userInstructions").should("contain", "Enter a Github username")
     });
     
     it("does not show any language when user visits homepage", () => {

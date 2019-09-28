@@ -7,7 +7,7 @@ class FavouriteLanguage extends Component {
         super(props);
         this.favourite = this.favourite.bind(this);
     }
-
+    
     favourite(languages){
         return languages.sort((a,b) =>
         languages.filter(v => v===a).length
