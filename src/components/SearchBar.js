@@ -29,8 +29,9 @@ class SearchBar extends Component {
     
     onSubmit(e) {
         e.preventDefault();
+        let url = process.env.REACT_APP_API_KEY
         axios
-          .get(process.env.REACT_APP_API_KEY + `${this.state.username}/repos`)
+          .get(url + `${this.state.username}/repos`)
           .then(response => {
             this.setState({ username: "", languages: this.getRepoLanguages(response) })
           })
