@@ -27,7 +27,7 @@ npm install
 npm start
 npx cypress open
 ```
-That last command will open up a browser. Open the 'features' folder in that browser and click on any of the files to run the tests.
+That last command will open up a cypress browser. Open the 'features' folder in that browser and click on any of the files to run the tests for that particular file.
 
 ### Jest for unit tests
 ```
