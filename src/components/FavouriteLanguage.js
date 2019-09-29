@@ -7,7 +7,7 @@ class FavouriteLanguage extends Component {
         super(props);
         this.favourite = this.favourite.bind(this);
     }
-    
+
     favourite(languages){
         return languages.sort((a,b) =>
         languages.filter(v => v===a).length
@@ -21,7 +21,7 @@ class FavouriteLanguage extends Component {
           return (
             <div id="favouriteLanguage1">
               <br></br><br></br>
-              <p style={pStyle}>If I could hazard a guess, their favourite language would be <span style={spanStyle}>{this.favourite(message)}</span></p>
+              <p style={pStyle}>My best guess is that their favourite language is <span style={spanStyle}>{this.favourite(message)}</span></p>
             </div>
           )
         } else if(message[0] == null || message[0] === "That username is invalid, please try again"){

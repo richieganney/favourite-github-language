@@ -6,7 +6,7 @@ describe("homepage", () => {
     
     it("does not show any language when user visits homepage", () => {
         cy.visit("localhost:3000");
-        cy.get("#favouriteLanguage1").should("not.have.value", "If I could hazard a guess, their favourite language would be")
+        cy.get("#favouriteLanguage1").should("not.have.value", "My best guess is that their favourite language is")
     });
 
     it("should contain a search bar", () => {

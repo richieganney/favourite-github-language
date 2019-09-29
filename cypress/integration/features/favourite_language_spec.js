@@ -4,7 +4,7 @@ describe("favourite language", () => {
         cy.get("#usernameSearchBar").type(
         "richieganney"
         ).type('{enter}')
-        cy.get("#favouriteLanguage1").should("contain", "If I could hazard a guess, their favourite language would be")
+        cy.get("#favouriteLanguage1").should("contain", "My best guess is that their favourite language is")
     });
 
     it("shows user an appropriate message when they enter an INVALID username", () => {
