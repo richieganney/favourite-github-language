@@ -29,7 +29,7 @@ class SearchBar extends Component {
     
     onSubmit(e) {
         e.preventDefault();
-        let url = process.env.REACT_APP_API_KEY
+        let url = 'https://api.github.com/users/'
         axios
           .get(url + `${this.state.username}/repos`)
           .then(response => {
