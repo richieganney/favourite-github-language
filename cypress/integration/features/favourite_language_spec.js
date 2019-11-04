@@ -2,7 +2,7 @@ describe("favourite language", () => {
     it("shows user an appropriate message when they enter a VALID username", () => {
         cy.visit("localhost:3000");
         cy.get("#usernameSearchBar").type(
-        "richieganney"
+            "richieganney"
         ).type('{enter}')
         cy.get("#favouriteLanguage1").should("contain", "My best guess is that their favourite language is")
     });
@@ -10,7 +10,7 @@ describe("favourite language", () => {
     it("shows user an appropriate message when they enter an INVALID username", () => {
         cy.visit("localhost:3000");
         cy.get("#usernameSearchBar").type(
-        "testtesttesttesttesttesttesttesttesttesttest"
+            "testtesttesttesttesttesttesttesttesttesttest"
         ).type('{enter}')
         cy.get("#favouriteLanguage2").should("contain", "That username is invalid, please try again")
     });
