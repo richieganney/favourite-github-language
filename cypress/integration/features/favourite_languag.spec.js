@@ -1,6 +1,6 @@
 describe("favourite language", () => {
     it("shows user an appropriate message when they enter a VALID username", () => {
-        cy.visit("http://favlingo.herokuapp.com/");
+        cy.visit("http://10.0.2.15:3000/");
         cy.get("#usernameSearchBar").type(
             "richieganney"
         ).type('{enter}')
@@ -8,7 +8,7 @@ describe("favourite language", () => {
     });
 
     it("shows user an appropriate message when they enter an INVALID username", () => {
-        cy.visit("http://favlingo.herokuapp.com/");
+        cy.visit("http://10.0.2.15:3000/");
         cy.get("#usernameSearchBar").type(
             "testtesttesttesttesttesttesttesttesttesttest"
         ).type('{enter}')
